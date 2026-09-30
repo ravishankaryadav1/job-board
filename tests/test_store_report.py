@@ -38,6 +38,15 @@ class StoreTest(unittest.TestCase):
             self.store.ingest(self.snapshot, "2026-09-30")
         self.assertEqual(self.store.get("demo:R1")["review_state"], "approved")
 
+    def test_changing_time_left_to_apply_preserves_approval(self):
+        with self.store.transaction():
+            self.store.ingest({**self.snapshot, "time_left_to_apply": "3 days left to apply"}, "2026-09-20")
+            self.store.approve("demo:R1")
+            self.store.ingest({**self.snapshot, "time_left_to_apply": "7 hours left to apply"}, "2026-09-30")
+        job = self.store.get("demo:R1")
+        self.assertEqual(job["review_state"], "approved")
+        self.assertEqual(job["time_left_to_apply"], "7 hours left to apply")
+
     def test_failed_fetch_keeps_last_verified(self):
         with self.store.transaction():
             self.store.ingest(self.snapshot, "2026-09-20")

@@ -83,7 +83,12 @@ class Store:
         checked_at = checked_at or now()
         key = f"{snapshot['company_id']}:{snapshot['job_id']}"
         old = self.get(key)
-        source_hash = digest(snapshot)
+        # time_left_to_apply is a live countdown, not stable posting content -- it
+        # changes on every check even when nothing else does. Hashing it would
+        # invalidate approval every refresh, the same problem relative "posted
+        # yesterday" text would cause if it were hashed.
+        hashable = {k: v for k, v in snapshot.items() if k != "time_left_to_apply"}
+        source_hash = digest(hashable)
         self.db.execute("INSERT OR IGNORE INTO snapshots VALUES (?,?,?)",
                         (source_hash, zlib.compress(json.dumps(snapshot).encode()), checked_at))
         changed = old is None or old.get("source_hash") != source_hash

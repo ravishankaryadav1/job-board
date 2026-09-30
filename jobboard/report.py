@@ -88,15 +88,17 @@ def make_report(store, companies, *, as_of=None):
 CSV_FIELDS = ["company", "job_id", "title", "url", "location", "role_type", "track", "term_bucket",
               "department", "degree", "eligibility", "duration_text", "program_term", "work_mode",
               "relocation", "relocation_detail", "entry_level", "bio_relevance", "skills",
-              "date_to_note", "date_kind", "posted_at", "status", "review_state", "last_verified",
-              "first_seen", "fresh", "student_visible", "missing_fields", "source_notes", "notes", "source_url"]
+              "date_to_note", "date_kind", "time_left_to_apply", "posted_at", "status", "review_state",
+              "last_verified", "first_seen", "fresh", "student_visible", "missing_fields", "source_notes",
+              "notes", "source_url"]
 
 # Everything a public visitor may see for one job. No curator notes, verification
 # errors, manual evidence, source hashes or anything else internal to review.
 PUBLIC_JOB_FIELDS = ["key", "company", "company_id", "job_id", "title", "url", "location", "country",
                      "role_type", "track", "term_bucket", "department", "degree", "eligibility",
                      "duration_text", "program_term", "work_mode", "hub", "relocation", "relocation_detail",
-                     "entry_level", "bio_relevance", "skills", "date_to_note", "date_kind", "posted_at",
+                     "entry_level", "bio_relevance", "skills", "date_to_note", "date_kind",
+                     "time_left_to_apply", "posted_at",
                      "status", "review_state", "last_verified", "first_seen", "fresh", "student_visible",
                      "source_notes", "source_url"]
 

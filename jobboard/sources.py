@@ -59,6 +59,10 @@ def normalize(company, raw, source_url):
         "work_mode": info.get("remoteType"), "hours": info.get("timeType"),
         "posted_at": iso_date(info.get("startDate")), "deadline": iso_date(info.get("endDate")),
         "deadline_kind": "posted_end_date" if iso_date(info.get("endDate")) else "unknown",
+        # Workday's own countdown text, e.g. "7 hours left to apply". Only accurate
+        # as of this check -- never used for status/availability, just displayed
+        # as an urgency hint alongside the ISO deadline above.
+        "time_left_to_apply": info.get("timeLeftToApply") if isinstance(info.get("timeLeftToApply"), str) else None,
         "status": status, "description": description,
         "availability_evidence": {"posted": info.get("posted"), "canApply": info.get("canApply")},
     }

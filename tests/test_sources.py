@@ -63,6 +63,13 @@ class SourcesTest(unittest.TestCase):
         self.assertEqual(normalize(COMPANY, raw(postedOn="Today"), BASE),
                          normalize(COMPANY, raw(postedOn="Yesterday"), BASE))
 
+    def test_time_left_to_apply_is_captured_but_not_authoritative(self):
+        snapshot = normalize(COMPANY, raw(endDate="2026-10-01", timeLeftToApply="7 hours left to apply"), BASE)
+        self.assertEqual(snapshot["deadline"], "2026-10-01")
+        self.assertEqual(snapshot["time_left_to_apply"], "7 hours left to apply")
+        # Missing/non-string countdown text never breaks normalization.
+        self.assertIsNone(normalize(COMPANY, raw(), BASE)["time_left_to_apply"])
+
     def test_title_rules_reduce_noise_but_recheck_known_exclusions(self):
         company = {**COMPANY, "collector": {**COMPANY["collector"], "include_title_patterns": [r"\bintern\b"]}}
         client = FakeSource(lambda p: {"total": 2, "jobPostings": [
