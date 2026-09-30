@@ -64,6 +64,10 @@ function drawJobs() {
       const meaning = job.date_kind === "minimum_acceptance" ? "Accepted at least until" : job.date_kind === "closing" ? "Closing date" : "Date to note";
       role.append(el("p", `${meaning}: ${job.date_to_note}`, "date-note"));
     }
+    if (job.time_left_to_apply) {
+      // Workday's own countdown, only accurate as of last_verified -- never live.
+      role.append(el("p", `${job.time_left_to_apply} (as of last check)`, "date-note past"));
+    }
     const company = el("td", job.company); company.append(el("span", job.location, "secondary"));
     const track = el("td", job.track || "Unclassified"); track.append(el("span", job.term_bucket || "Duration unknown", "secondary"));
     const checked = el("td", (job.last_verified || "Unverified").slice(0, 10));
