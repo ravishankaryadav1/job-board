@@ -87,8 +87,8 @@ class StoreTest(unittest.TestCase):
         self.assertTrue({j["company_id"] for j in self.store.jobs()} <= {c["id"] for c in companies})
         summary = export(self.store, companies, Path(self.temp.name) / "build", as_of="2026-09-30")
         self.assertEqual(summary["student_visible"], 35)
-        self.assertEqual(summary["automated_companies"], 5)
-        self.assertEqual(summary["total_companies"], 23)
+        self.assertEqual(summary["automated_companies"], 6)
+        self.assertEqual(summary["total_companies"], 30)
 
     def test_public_export_hides_curator_notes_and_pending_records(self):
         import json

@@ -579,5 +579,176 @@
     "collector": {
       "adapter": "manual"
     }
+  },
+  {
+    "id": "boehringer-ingelheim",
+    "name": "Boehringer Ingelheim",
+    "priority": "U.S. hubs",
+    "rationale": "Prescription medicines, biopharmaceuticals and animal health; no confirmed AI-specific initiative",
+    "hubs": "Ridgefield, CT; Athens, GA; Fremont, CA",
+    "programs": "Early-career programs exist; no branded program name published",
+    "cycle": {
+      "opening": "Public fixed application opening not found on reviewed pages.",
+      "closing": "Public coordinated closing window not found.",
+      "evidence": "Careers portal confirmed; program-level facts not found",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://jobs.boehringer-ingelheim.com/en-US",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Careers portal (SAP SuccessFactors) confirmed; program pages returned no content to automated review, so most facts are unverified. No AI/digital initiative found.",
+    "next_action": "Manually check jobs.boehringer-ingelheim.com/en-US for U.S. student/intern postings.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "revolution-medicines",
+    "name": "Revolution Medicines",
+    "priority": "Bay Area",
+    "rationale": "RAS-targeted small-molecule oncology (Tri-Complex platform, RAS(ON) biology)",
+    "hubs": "Redwood City; San Francisco Bay Area",
+    "programs": "2026 intern cohort confirmed via LinkedIn; no branded program name found",
+    "cycle": {
+      "opening": "Not found in published sources.",
+      "closing": "Not found in published sources.",
+      "evidence": "LinkedIn confirms an active intern cohort; no official program page found",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://www.revmed.com/careers",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "ATS could not be confirmed (Workday tenant guesses returned HTTP 406); treat as unknown, not Workday.",
+    "next_action": "Check revmed.com/careers directly and LinkedIn for the next intern cohort posting.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "tempus-ai",
+    "name": "Tempus AI",
+    "priority": "U.S. hubs",
+    "rationale": "Precision medicine combining genomic sequencing with multimodal AI across oncology, cardiology and radiology",
+    "hubs": "Chicago, IL (HQ); New York, NY; Redwood City, CA; Atlanta, GA",
+    "programs": "Not found in published sources.",
+    "cycle": {
+      "opening": "Not found; careers domain was rate-limited during review.",
+      "closing": "Not found in published sources.",
+      "evidence": "Company/product facts confirmed via published references; recruiting facts not accessible",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://en.wikipedia.org/wiki/Tempus_AI",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "tempus.com returned HTTP 429 on every attempt; ATS and program details unverified. Recheck manually rather than trusting this snapshot.",
+    "next_action": "Check tempus.com/careers directly (rate-limited during automated review) for open internship roles.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "recursion",
+    "name": "Recursion Pharmaceuticals",
+    "priority": "U.S. hubs",
+    "rationale": "Recursion OS: AI-native drug discovery combining cell imaging, machine learning and generative chemistry",
+    "hubs": "Salt Lake City, UT (HQ); New York, NY; Toronto, ON",
+    "programs": "Internship Program (Greenhouse-listed)",
+    "cycle": {
+      "opening": "Not found in published sources.",
+      "closing": "Not found in published sources.",
+      "evidence": "Internship program confirmed via Greenhouse job board",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://job-boards.greenhouse.io/recursionpharmaceuticals",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program confirmed to exist; no cycle/duration/eligibility facts published.",
+    "next_action": "Check the Greenhouse board directly for current internship postings.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "verily",
+    "name": "Verily",
+    "priority": "U.S. hubs",
+    "rationale": "AI-native precision health company (Pre platform) for clinical research and healthcare data harmonization",
+    "hubs": "Dallas–Fort Worth, TX (HQ since Aug 2024); Northern California; Boston, MA; Raleigh, NC",
+    "programs": "No dedicated early-career program page found; open roles listed directly.",
+    "cycle": {
+      "opening": "Not found in published sources.",
+      "closing": "Not found in published sources.",
+      "evidence": "Workday collector confirmed; no program-level cycle facts published",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://www.verily.com/careers",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "HQ relocated from South San Francisco to Dallas–Fort Worth in Aug 2024; do not assume a Bay Area hub.",
+    "next_action": "Automated Workday collection covers discovery/verification; monitor for role relevance since no dedicated intern program was found.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://verily.wd1.myworkdayjobs.com",
+      "tenant": "verily",
+      "site": "Verily_Careers",
+      "queries": [
+        "Intern",
+        "Data Scientist"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "priority": "U.S. hubs",
+    "rationale": "Microsoft Research Health Futures and the Quine biology foundation model (with the Broad Institute)",
+    "hubs": "Redmond, WA (Health Futures); Cambridge, MA (MSR New England)",
+    "programs": "Microsoft Research Internships (~12 weeks); Discovery/Explore/Global University Internships (general, not health-specific)",
+    "cycle": {
+      "opening": "Not found in published sources.",
+      "closing": "Not found in published sources.",
+      "evidence": "Program names and duration confirmed via microsoft.com/research; application windows not published",
+      "duration": "Research internships about 12 weeks; Discovery program 4 weeks.",
+      "eligibility": "Varies by program; Discovery is first-year students, Global Internships span bachelor's through PhD.",
+      "relocation": "Not stated for interns specifically; visa support mentioned generally.",
+      "source_url": "https://www.microsoft.com/en-us/research/careers/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "General university internship programs are not health-specific; Health Futures/Quine relevance is at the research-lab level, not a dedicated recruiting track.",
+    "next_action": "Target Microsoft Research Internships and mention Health Futures/Quine explicitly in applications.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "priority": "U.S. hubs",
+    "rationale": "AWS HealthOmics: managed bioinformatics/genomics service for drug discovery and clinical diagnostics",
+    "hubs": "Seattle/Bellevue, WA; Arlington, VA; San Francisco Bay Area",
+    "programs": "Amazon University Talent (Science, SDE, Data Science, Research Science internship tracks)",
+    "cycle": {
+      "opening": "Not found in published sources.",
+      "closing": "Not found in published sources.",
+      "evidence": "Program tracks confirmed via amazon.jobs; no HealthOmics-specific recruiting page found",
+      "duration": "Not stated in accessible sources.",
+      "eligibility": "Not stated in accessible sources.",
+      "relocation": "Not established in accessible sources.",
+      "source_url": "https://www.amazon.jobs/content/en/career-programs/university",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "No internship track specific to AWS HealthOmics found; Science-track internships are the closest general fit.",
+    "next_action": "Search amazon.jobs for Science/Applied Science/Research Science internships and filter for genomics/health-adjacent teams.",
+    "collector": {
+      "adapter": "manual"
+    }
   }
 ]

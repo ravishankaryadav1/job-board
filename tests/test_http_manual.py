@@ -84,7 +84,7 @@ class HttpManualTest(unittest.TestCase):
     def test_config_is_loadable_and_secret_free(self):
         config = Path(__file__).resolve().parents[1] / "config/companies.json"
         companies = load_companies(config)
-        self.assertEqual(len(companies), 23)
+        self.assertEqual(len(companies), 30)
         self.assertNotIn("OPENAI_API_KEY", config.read_text())
 
 
