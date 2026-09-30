@@ -115,10 +115,20 @@
       "source_url": "https://careers.amgen.com/en/search-jobs/research%20intern/87/1",
       "researched_at": "2026-09-30"
     },
-    "coverage_note": "Verified roles included",
-    "next_action": "Check now for 2027 roles and repeat weekly.",
+    "coverage_note": "Confirmed Workday tenant (amgen.wd1, site Careers); automated collection now covers discovery/verification",
+    "next_action": "Review new September/October batch; automated recheck runs weekly.",
     "collector": {
-      "adapter": "manual"
+      "adapter": "workday",
+      "base_url": "https://amgen.wd1.myworkdayjobs.com",
+      "tenant": "amgen",
+      "site": "Careers",
+      "queries": [
+        "Intern",
+        "Research Associate"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
     }
   },
   {
@@ -528,10 +538,20 @@
       "source_url": "https://www.illumina.com/company/careers/interns.html",
       "researched_at": "2026-09-30"
     },
-    "coverage_note": "Program researched; indexed 2027 example was Singapore and excluded",
-    "next_action": "Search U.S. university portal for genomics, bioinformatics and software.",
+    "coverage_note": "Confirmed Workday tenant (illumina.wd1, site illumina-careers); a separate illumina-universityrecruiting site exists but had 0 open reqs when checked",
+    "next_action": "Automated collection covers discovery/verification; recheck illumina-universityrecruiting periodically for student-specific postings.",
     "collector": {
-      "adapter": "manual"
+      "adapter": "workday",
+      "base_url": "https://illumina.wd1.myworkdayjobs.com",
+      "tenant": "illumina",
+      "site": "illumina-careers",
+      "queries": [
+        "Intern",
+        "Bioinformatics"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
     }
   },
   {
@@ -551,10 +571,20 @@
       "source_url": "https://jobs.thermofisher.com/global/en/interns",
       "researched_at": "2026-09-30"
     },
-    "coverage_note": "Program researched; no requisition verified for sample",
-    "next_action": "Search R&D, cell biology, bioinformatics and scientist I roles.",
+    "coverage_note": "Confirmed Workday tenant (thermofisher.wd5, site ThermoFisherCareers); automated collection now covers discovery/verification",
+    "next_action": "Automated recheck runs weekly; watch for R&D, cell biology, bioinformatics and scientist I roles.",
     "collector": {
-      "adapter": "manual"
+      "adapter": "workday",
+      "base_url": "https://thermofisher.wd5.myworkdayjobs.com",
+      "tenant": "thermofisher",
+      "site": "ThermoFisherCareers",
+      "queries": [
+        "Intern",
+        "Co-op"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
     }
   },
   {
