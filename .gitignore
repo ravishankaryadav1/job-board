@@ -12,3 +12,4 @@ dist/
 *.sqlite*
 *.db
 *.log
+.vercel
