@@ -91,6 +91,36 @@ CSV_FIELDS = ["company", "job_id", "title", "url", "location", "role_type", "tra
               "date_to_note", "date_kind", "posted_at", "status", "review_state", "last_verified",
               "first_seen", "fresh", "student_visible", "missing_fields", "source_notes", "notes", "source_url"]
 
+# Everything a public visitor may see for one job. No curator notes, verification
+# errors, manual evidence, source hashes or anything else internal to review.
+PUBLIC_JOB_FIELDS = ["key", "company", "company_id", "job_id", "title", "url", "location", "country",
+                     "role_type", "track", "term_bucket", "department", "degree", "eligibility",
+                     "duration_text", "program_term", "work_mode", "hub", "relocation", "relocation_detail",
+                     "entry_level", "bio_relevance", "skills", "date_to_note", "date_kind", "posted_at",
+                     "status", "review_state", "last_verified", "first_seen", "fresh", "student_visible",
+                     "source_notes", "source_url"]
+
+# Company coverage fields safe to publish: recruiting-cycle facts and counts, not
+# per-run collector diagnostics (queries, budgets, internal failure detail).
+PUBLIC_COMPANY_FIELDS = ["id", "name", "rationale", "collector", "cycle", "tracked", "student_visible", "issues"]
+
+
+def public_board(report):
+    """Strip make_report()'s output to only what a public site may show.
+
+    Only student_visible jobs are included; pending, rejected and stale records
+    never reach the client. See README "Publish a public site".
+    """
+    jobs = [{field: job.get(field) for field in PUBLIC_JOB_FIELDS}
+            for job in report["jobs"] if job["student_visible"]]
+    companies = [{field: company.get(field) for field in PUBLIC_COMPANY_FIELDS}
+                 for company in report["companies"]]
+    summary = {k: v for k, v in report["summary"].items()
+               if k in {"student_visible", "automated_companies", "total_companies"}}
+    return {"generated_at": report["generated_at"], "as_of": report["as_of"],
+            "summary": summary, "jobs": jobs, "companies": companies,
+            "scope": report["scope"]}
+
 
 def csv_text(jobs):
     target = io.StringIO(newline="")
@@ -110,18 +140,42 @@ def csv_text(jobs):
     return target.getvalue()
 
 
+def _write_csv(destination, filename, rows):
+    temporary = destination / (filename + ".tmp")
+    temporary.write_text(csv_text(rows), encoding="utf-8-sig")
+    temporary.replace(destination / filename)
+
+
+def _copy_web_assets(destination):
+    for source in (Path(__file__).parent / "web").iterdir():
+        if source.is_file():
+            shutil.copyfile(source, destination / source.name)
+
+
 def export(store, companies, destination, *, as_of=None):
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
     report = make_report(store, companies, as_of=as_of)
     write_json(destination / "board.json", report)
     write_json(destination / "gaps.json", {k: report[k] for k in ("as_of", "summary", "companies")})
-    for filename, rows in (("jobs.csv", report["jobs"]),
-                           ("student_jobs.csv", [j for j in report["jobs"] if j["student_visible"]])):
-        temporary = destination / (filename + ".tmp")
-        temporary.write_text(csv_text(rows), encoding="utf-8-sig")
-        temporary.replace(destination / filename)
-    for source in (Path(__file__).parent / "web").iterdir():
-        if source.is_file():
-            shutil.copyfile(source, destination / source.name)
+    _write_csv(destination, "jobs.csv", report["jobs"])
+    _write_csv(destination, "student_jobs.csv", [j for j in report["jobs"] if j["student_visible"]])
+    _copy_web_assets(destination)
     return report["summary"]
+
+
+def export_public(store, companies, destination, *, as_of=None):
+    """Write a public-safe subset: student-visible jobs only, no internal fields.
+
+    See README "Publish a public site" before pointing hosting at this output
+    instead of export()'s maintainer preview.
+    """
+    destination = Path(destination)
+    destination.mkdir(parents=True, exist_ok=True)
+    report = make_report(store, companies, as_of=as_of)
+    board = public_board(report)
+    write_json(destination / "board.json", board)
+    write_json(destination / "gaps.json", {k: board[k] for k in ("as_of", "summary", "companies")})
+    _write_csv(destination, "student_jobs.csv", [j for j in report["jobs"] if j["student_visible"]])
+    _copy_web_assets(destination)
+    return board["summary"]

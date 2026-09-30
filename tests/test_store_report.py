@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 from jobboard.pipeline import refresh, seed
-from jobboard.report import csv_text, export, job_view, make_report
+from jobboard.report import csv_text, export, export_public, job_view, make_report
 from jobboard.sources import normalize
 from jobboard.store import Store
 from helpers import BASE, COMPANY, FakeSource, raw
@@ -89,6 +89,21 @@ class StoreTest(unittest.TestCase):
         self.assertEqual(summary["student_visible"], 35)
         self.assertEqual(summary["automated_companies"], 5)
         self.assertEqual(summary["total_companies"], 23)
+
+    def test_public_export_hides_curator_notes_and_pending_records(self):
+        import json
+        with self.store.transaction():
+            self.store.ingest(self.snapshot, "2026-09-30")
+            self.store.approve("demo:R1", notes="Reviewed with program coordinator")
+            self.store.ingest({**self.snapshot, "job_id": "R2", "title": "Pending Intern"}, "2026-09-30")
+        summary = export_public(self.store, [COMPANY], Path(self.temp.name) / "public", as_of="2026-09-30")
+        self.assertEqual(summary["student_visible"], 1)
+        board = json.loads((Path(self.temp.name) / "public/board.json").read_text())
+        self.assertEqual(len(board["jobs"]), 1)
+        self.assertEqual(board["jobs"][0]["job_id"], "R1")
+        for key in ("notes", "manual_evidence", "verification_error", "parser_error",
+                    "curated_fields", "suggested_fields", "source_hash", "approved_hash"):
+            self.assertNotIn(key, board["jobs"][0])
 
     def test_csv_neutralizes_formula_injection(self):
         csv = csv_text([{"company": "=DANGEROUS()", "title": " +CMD", "url": "https://example.org"}])

@@ -22,11 +22,14 @@ handles public-source requests, robots checks, throttling, bounded retries and
 response limits. It never receives API credentials. `sources.py` implements the
 Workday adapter, including pagination and direct rechecks of existing records.
 
-`parser.py` is the only OpenAI integration. It calls the Responses endpoint using
-Python's standard HTTP library, so there is no SDK dependency to pin. To support a
-different provider, implement the same `parse(title, description)` interface and
-keep its output validation/review boundary. Do not mix source collection into the
-model prompt or let model-generated URLs drive network requests.
+`parser.py` is the OpenAI integration, plus the shared prompt, schema and
+`validate_fields()` evidence/business-rule validation both providers use. It calls
+the Responses endpoint using Python's standard HTTP library, so there is no SDK
+dependency to pin. `claude_parser.py` is a second provider implementing the same
+`parse(title, description) -> validated fields` interface via AWS Bedrock (the
+`anthropic` SDK, an optional extra since Bedrock's SigV4 signing isn't practical to
+hand-roll); `cli.py`'s `--provider` flag selects between them. Do not mix source
+collection into the model prompt or let model-generated URLs drive network requests.
 
 `store.py` owns SQLite, stable keys and audit events. `pipeline.py` coordinates
 collection and optional extraction. `report.py` is the shared projection for the

@@ -9,6 +9,10 @@ description = "Auditable, configurable pharma/biotech opportunity tracker"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+# Only needed for `--ai --provider claude`; init/refresh/export/serve need nothing.
+claude = ["anthropic[bedrock]"]
+
 [project.scripts]
 jobboard = "jobboard.cli:main"
 

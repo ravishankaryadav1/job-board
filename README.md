@@ -66,12 +66,38 @@ python3 -m jobboard refresh --company nvidia
 python3 -m jobboard enrich --company nvidia --max-ai-calls 5
 ```
 
+## Enable Claude parsing instead
+
+`--ai`/`enrich` accept `--provider claude` as an alternative to OpenAI, calling
+Claude via AWS Bedrock (e.g. through an internal gateway such as Versa). It shares
+the same prompt, schema and `validate_fields()` quote-checking as the OpenAI path
+in `jobboard/parser.py` — see `jobboard/claude_parser.py`.
+
+1. Install the optional extra: `pip install -e ".[claude]"` (adds `anthropic` and
+   `boto3`; every other command stays dependency-free).
+2. Set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`,
+   `AWS_ENDPOINT_URL_BEDROCK_RUNTIME` and `CLAUDE_MODEL_ID` in `.env` (standard
+   boto3 names, so they match anything else in your environment already reading
+   them).
+3. Run with `--provider claude`:
+
+```sh
+python3 -m jobboard refresh --company gilead --ai --provider claude --max-ai-calls 5
+python3 -m jobboard enrich --company nvidia --provider claude --max-ai-calls 5
+```
+
+This Bedrock deployment's Anthropic API contract predates structured outputs and
+strict tool use (both return 400 "Extra inputs are not permitted"), so
+`ClaudeParser` uses plain forced tool use instead; `validate_fields()` is the
+actual schema/evidence guard in both providers, not the API-level schema hint.
+
 ## What to edit
 
 | Change | File / command |
 | --- | --- |
 | Employers, source endpoints, search terms and recruiting cycles | `config/companies.json` |
-| Extraction fields, definitions and OpenAI instructions | `jobboard/parser.py` |
+| Extraction fields, definitions and model instructions (shared by both providers) | `jobboard/parser.py` |
+| Claude/Bedrock-specific request shape | `jobboard/claude_parser.py` |
 | Source-specific collection behavior | `jobboard/sources.py` |
 | Student visibility and gap rules | `jobboard/report.py` |
 | Layout and browser filters | `jobboard/web/` |
@@ -122,9 +148,34 @@ Generated output in `build/`:
 - `gaps.json`: company-level gaps, calendar evidence and data-quality counts.
 
 `build/` includes curator notes and review records; treat it as a maintainer preview.
-For a public deployment, publish a separately filtered student dataset and keep
-internal notes/review data private. Hosting, access control, Google Sheets sync and
+Never point public hosting at `build/`. Access control, Google Sheets sync and
 notifications are not implemented in this version.
+
+## Publish a public site
+
+`python3 -m jobboard export --public` writes to `public/` instead of `build/`, using
+only student-visible jobs (open, approved, fresh, U.S., not explicitly non-entry-level)
+and dropping curator notes, review state history, manual evidence and every other
+maintainer-only field. Only what the browser board already displays for a visible
+row leaves the machine. Diff `public/board.json` before pushing if you are unsure
+what changed.
+
+`public/` is committed to Git (unlike `build/`, `state/`, or `.env`), so a redeploy is:
+
+```sh
+python3 -m jobboard refresh --ai --max-ai-calls 20   # optional: refresh sources first
+python3 -m jobboard export --public
+git add public
+git commit -m "Refresh public board"
+git push
+```
+
+To host it on Vercel, `vercel.json` at the repo root pins `outputDirectory` to
+`public` with no build step, since the site is already static files. Link the repo
+once with `vercel link` (or connect the GitHub repo in the Vercel dashboard), then
+each `git push` to `main` redeploys the last committed `public/` snapshot. There is
+no scheduled refresh: republishing is a deliberate, manual step so no OpenAI key or
+source-fetching credentials ever need to live in a CI secret.
 
 ## Weekly operation and development
 

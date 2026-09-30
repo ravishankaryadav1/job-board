@@ -15,6 +15,8 @@
    evidence with AI suggestions before approving anything.
 6. Run `export` and preview with `serve`. Inspect the student view, coverage tab
    and CSV before distributing it. Keep maintainer notes/review data private.
+   To update the public site, run `export --public` instead, review `public/`,
+   then commit and push it (see README "Publish a public site").
 7. Recheck company program calendars monthly, and weekly during active recruiting
    windows. Edit `cycle.researched_at` only after actually checking the source.
 

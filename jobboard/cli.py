@@ -11,7 +11,7 @@ from pathlib import Path
 from .common import BoardError, https_url, load_companies, load_env, now, read_json, today
 from .parser import FIELD_TYPES, OpenAIParser
 from .pipeline import enrich_one, refresh, seed
-from .report import export, make_report
+from .report import export, export_public, make_report
 from .store import Store
 
 
@@ -25,11 +25,15 @@ def arguments(argv=None):
     p.add_argument("--company", action="append", help="Company ID; repeat to select several")
     p.add_argument("--max-pages", type=int, default=25, help="Per search query")
     p.add_argument("--max-details", type=int, default=100, help="Per company; skipped coverage is reported")
-    p.add_argument("--ai", action="store_true", help="Send public posting text to OpenAI for suggestions")
+    p.add_argument("--ai", action="store_true", help="Send public posting text to an AI provider for suggestions")
     p.add_argument("--max-ai-calls", type=int, default=20)
-    p = commands.add_parser("enrich", help="Parse stored descriptions with OpenAI; no source network calls")
+    p.add_argument("--provider", choices=["openai", "claude"], default="openai",
+                   help="AI provider for --ai (claude requires the optional anthropic[bedrock] extra)")
+    p = commands.add_parser("enrich", help="Parse stored descriptions with an AI provider; no source network calls")
     p.add_argument("--company", action="append")
     p.add_argument("--max-ai-calls", type=int, default=20)
+    p.add_argument("--provider", choices=["openai", "claude"], default="openai",
+                   help="AI provider (claude requires the optional anthropic[bedrock] extra)")
     p = commands.add_parser("show", help="Inspect one record and its proposed fields/evidence")
     p.add_argument("key", help="company-id:requisition-id")
     p = commands.add_parser("review", help="Explicitly approve current source facts and selected fields")
@@ -45,6 +49,8 @@ def arguments(argv=None):
     p = commands.add_parser("export", help="Generate board, review data and CSVs locally")
     p.add_argument("--out", type=Path)
     p.add_argument("--as-of", help="YYYY-MM-DD; defaults to current UTC date")
+    p.add_argument("--public", action="store_true",
+                   help="Write only student-visible jobs with no curator/review fields, to ROOT/public")
     p = commands.add_parser("serve", help="Preview generated output on localhost; no write/API-key endpoint")
     p.add_argument("--port", type=int, default=8765)
     p = commands.add_parser("backup", help="Make a consistent SQLite backup, including audit/cache")
@@ -116,6 +122,15 @@ def record_manual(store, companies, payload):
     return {"key": key, "review_state": "pending"}
 
 
+def make_ai_parser(store, provider, max_calls):
+    if provider == "claude":
+        # Imported lazily: anthropic[bedrock] is an optional extra, not a base
+        # dependency, so `init`/`export`/`serve` never require installing it.
+        from .claude_parser import ClaudeParser
+        return ClaudeParser(store, max_calls=max_calls)
+    return OpenAIParser(store, max_calls=max_calls)
+
+
 def main(argv=None):
     args = arguments(argv)
     root = args.root.resolve()
@@ -136,12 +151,12 @@ def main(argv=None):
             result = {"imported": seed(store, root / "data/seed_jobs.json"),
                       "snapshot": "2026-09-30 (not a live refresh)"}
         elif args.command == "refresh":
-            parser = OpenAIParser(store, max_calls=args.max_ai_calls) if args.ai else None
+            parser = make_ai_parser(store, args.provider, args.max_ai_calls) if args.ai else None
             result = refresh(store, companies_selected, parser=parser,
                              max_pages=args.max_pages, max_details=args.max_details)
             exit_code = 2 if any(c["status"] == "partial" for c in result["companies"]) else 0
         elif args.command == "enrich":
-            parser = OpenAIParser(store, max_calls=args.max_ai_calls)
+            parser = make_ai_parser(store, args.provider, args.max_ai_calls)
             ids = {c["id"] for c in companies_selected}
             failures = 0
             with store.transaction():
@@ -166,7 +181,10 @@ def main(argv=None):
             report = make_report(store, companies, as_of=args.as_of)
             result = {k: report[k] for k in ("as_of", "summary", "companies")}
         elif args.command == "export":
-            result = export(store, companies, args.out or root / "build", as_of=args.as_of)
+            if args.public:
+                result = export_public(store, companies, args.out or root / "public", as_of=args.as_of)
+            else:
+                result = export(store, companies, args.out or root / "build", as_of=args.as_of)
         elif args.command == "backup":
             args.path.parent.mkdir(parents=True, exist_ok=True)
             store.backup(args.path)
