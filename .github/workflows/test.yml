@@ -1,0 +1,22 @@
+name: Test job board (manual)
+
+# Deliberately manual: no schedule, source traffic, paid calls or fork execution.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Offline regression tests
+        run: python3 -m unittest discover -s tests -v

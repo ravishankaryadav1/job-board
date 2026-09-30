@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>AICD3 · Opportunities</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark" aria-hidden="true">A</span><span>UCSF <strong>AICD3</strong></span></div>
+    <span class="eyebrow">PHARMA · BIOTECH · AI FOR BIOLOGY</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">YOUR NEXT CHAPTER</p><h1>Science meets opportunity.</h1>
+        <p class="subtitle">Explore internships and early-career roles, with the details that help you decide.</p></div>
+      <div class="snapshot"><span class="dot"></span><span id="snapshot">Loading snapshot…</span><small>Official sources · curated for students</small></div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <div id="stats" class="stats" aria-live="polite"></div>
+    <nav class="tabs" aria-label="Board views">
+      <button id="jobs-tab" class="active" type="button" aria-pressed="true">Opportunities</button>
+      <button id="coverage-tab" type="button" aria-pressed="false">Company coverage & recruiting cycles</button>
+      <a href="student_jobs.csv" download>Download student CSV ↗</a>
+    </nav>
+    <section id="jobs-panel" aria-labelledby="jobs-tab">
+      <div class="filters">
+        <label class="search">Search roles, skills or companies<input id="search" type="search" placeholder="Try computational biology, CMC, genomics…"></label>
+        <label>Role type<select id="type"><option value="">All types</option></select></label>
+        <label>Pipeline stage<select id="track"><option value="">All stages</option></select></label>
+        <label>Geography<select id="geography"><option value="">All U.S. hubs</option><option value="bay">Bay Area options</option><option value="remote">U.S. remote</option></select></label>
+      </div>
+      <div class="results-line"><p id="results" aria-live="polite"></p><label class="review-toggle"><input type="checkbox" id="review"> Include review queue and older records</label></div>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Opportunity</th><th scope="col">Company / location</th><th scope="col">Stage / term</th><th scope="col">Last checked</th><th scope="col">Apply</th></tr></thead><tbody id="jobs"></tbody></table></div>
+      <p id="empty" hidden>No matching records. Adjust the filters or include the review queue.</p>
+    </section>
+    <section id="coverage-panel" aria-labelledby="coverage-tab" hidden>
+      <p class="coverage-intro">Coverage gaps are explicit. A company with no tracked roles may still be hiring. Published calendars, historical patterns and observed posting dates are labeled separately.</p>
+      <div id="companies" class="companies"></div>
+    </section>
+    <footer><p>Student view includes fresh, approved, open postings. Check degree and work-authorization requirements on the employer’s page.</p>
+      <p>This is a curated snapshot. Refresh the source data weekly; this page does not collect data or store an API key.</p></footer>
+  </main>
+</body>
+</html>

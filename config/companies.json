@@ -1,0 +1,583 @@
+[
+  {
+    "id": "genentech",
+    "name": "Genentech / Roche",
+    "priority": "Bay Area",
+    "rationale": "AI drug discovery, translational biology, biologics and CMC",
+    "hubs": "South San Francisco; San Francisco; New York",
+    "programs": "Summer internships; spring internships; graduate jobs",
+    "cycle": {
+      "opening": "Summer postings November\u2013March. Spring 2027 examples posted Sep 23\u201324.",
+      "closing": "Summer hiring mostly complete by end of March; individual roles can close earlier. Current spring examples end Oct 1.",
+      "evidence": "Published recurring cycle + current postings",
+      "duration": "Usually 10\u201312 weeks in summer; selected spring roles 6 months",
+      "eligibility": "BS/MS/PharmD/PhD; recent-graduate eligibility varies by role",
+      "relocation": "General FAQ offers housing/relocation stipends; current role terms override it.",
+      "source_url": "https://careers.gene.com/us/en/faq",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified roles included",
+    "next_action": "Prioritize Oct 1 spring deadlines. Watch November for summer batch.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://roche.wd3.myworkdayjobs.com",
+      "tenant": "roche",
+      "site": "ROG-A2O-GENE",
+      "queries": [
+        "Intern",
+        "Scientist"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "gilead",
+    "name": "Gilead / Kite",
+    "priority": "Bay Area",
+    "rationale": "AI, virology, oncology, biometrics and pharmaceutical development",
+    "hubs": "Foster City; other Gilead/Kite U.S. sites",
+    "programs": "Summer internships; entry jobs",
+    "cycle": {
+      "opening": "Current sample posted Sep 8\u201329, 2026. A fixed annual opening date was not found.",
+      "closing": "Current sampled internships end Oct 16 or Oct 30, 2026; not a companywide annual cutoff.",
+      "evidence": "Current posting evidence",
+      "duration": "10\u201312 weeks, May\u2013August",
+      "eligibility": "Continued college enrollment; current postings have strict independent work-authorization requirements",
+      "relocation": "Housing/travel help subject to eligibility; postings mention housing stipends.",
+      "source_url": "https://www.gilead.com/careers/opportunities/early-career-opportunities/gilead-internship-program",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified roles included",
+    "next_action": "Refresh now through October twice weekly if capacity allows.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://gilead.wd1.myworkdayjobs.com",
+      "tenant": "gilead",
+      "site": "gileadcareers",
+      "queries": [
+        "Intern",
+        "Research Associate"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "nvidia",
+    "name": "NVIDIA",
+    "priority": "Bay Area",
+    "rationale": "Generative AI for biology, chemistry and drug discovery",
+    "hubs": "Santa Clara; U.S. locations vary by team",
+    "programs": "Research internships; new-college-grad research jobs",
+    "cycle": {
+      "opening": "Applications and internships available year-round. 2027 research internship live in September.",
+      "closing": "Role-specific. \u201cAt least until\u201d dates are minimum acceptance dates, not closing deadlines.",
+      "evidence": "Published year-round cycle + current postings",
+      "duration": "University internships at least 12 weeks; maximum not stated",
+      "eligibility": "BS/MS/PhD/MBA program-wide; sampled bio-relevant research roles require PhD",
+      "relocation": "Not stated in sampled roles.",
+      "source_url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified roles included",
+    "next_action": "Use biology, BioNeMo, molecular, chemistry and AI for science terms.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://nvidia.wd5.myworkdayjobs.com",
+      "tenant": "nvidia",
+      "site": "NVIDIAExternalCareerSite",
+      "queries": [
+        "biology",
+        "drug"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "amgen",
+    "name": "Amgen",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Computational biology, scientific data, process development",
+    "hubs": "South San Francisco; Thousand Oaks; Cambridge; U.S. remote",
+    "programs": "Summer internships; graduate roles",
+    "cycle": {
+      "opening": "2027 sample posted Aug 31 and Sep 11, 2026; annual opening date not established.",
+      "closing": "Sampled roles accept applications until sufficient candidates or a hire; no fixed cutoff.",
+      "evidence": "Current posting evidence",
+      "duration": "Exact length not stated in sampled roles",
+      "eligibility": "Undergraduate and graduate tracks; selected graduate roles require first program year completed",
+      "relocation": "Role-specific; not stated in samples.",
+      "source_url": "https://careers.amgen.com/en/search-jobs/research%20intern/87/1",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified roles included",
+    "next_action": "Check now for 2027 roles and repeat weekly.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "abbvie",
+    "name": "AbbVie",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Biologics, ADME, discovery and data engineering",
+    "hubs": "South San Francisco; Pleasanton; Lake County; Boston area; Irvine",
+    "programs": "Summer internships; development programs",
+    "cycle": {
+      "opening": "2027 BTS role live by Sep 30. General program page does not publish annual opening dates.",
+      "closing": "No companywide expiration found; use each requisition.",
+      "evidence": "Program facts + live posting observation",
+      "duration": "Typically 10\u201312 weeks; sampled BTS role 11 weeks",
+      "eligibility": "Undergraduate and graduate tracks; individual degree restrictions matter",
+      "relocation": "Eligible interns may get housing/travel relocation assistance.",
+      "source_url": "https://www.abbvie.com/join-us/internships.html",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified BTS role included",
+    "next_action": "Target R&D terms; exclude expired 2025/2026 summer pages.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "biogen",
+    "name": "Biogen",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Neuroscience, antibodies, QSP and clinical analytics",
+    "hubs": "Cambridge; South San Francisco; Research Triangle Park; limited remote",
+    "programs": "Summer internships; spring/fall co-ops",
+    "cycle": {
+      "opening": "Summer posts December\u2013early February. January co-ops post September; July co-ops post January.",
+      "closing": "Summer internships usually filled by end March; winter co-ops end November; summer co-ops end April. Rolling, role-specific.",
+      "evidence": "Published recurring cycle",
+      "duration": "Summer 12 weeks; co-ops 6 months",
+      "eligibility": "Enrolled students across degree levels; recent grads generally need subsequent enrollment",
+      "relocation": "Not stated in sampled roles.",
+      "source_url": "https://www.biogen.com/careers/students-and-graduates.html",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified co-ops included",
+    "next_action": "January 2027 co-op resume reviews begin October 2026.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://biibhr.wd3.myworkdayjobs.com",
+      "tenant": "biibhr",
+      "site": "External",
+      "queries": [
+        "Intern",
+        "Co-op",
+        "Associate"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "biomarin",
+    "name": "BioMarin",
+    "priority": "Bay Area",
+    "rationale": "Genetic medicines, rare disease, analytical and technical operations",
+    "hubs": "San Rafael; Novato",
+    "programs": "Summer internships; fellowships; jobs",
+    "cycle": {
+      "opening": "U.S. internships run June\u2013August. Public opening window not found on careers page.",
+      "closing": "Public coordinated closing window not found.",
+      "evidence": "Program confirmed; application dates unknown",
+      "duration": "Summer June\u2013August; other programs vary",
+      "eligibility": "Check individual roles; research-associate titles may require prior industry work",
+      "relocation": "Not established for the U.S. program.",
+      "source_url": "https://www.biomarin.com/careers/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "RA example required 2\u20134 years industry experience; excluded",
+    "next_action": "Monitor intern, bioinformatics and associate roles; screen experience requirements.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "merck",
+    "name": "Merck & Co. / MSD",
+    "priority": "U.S. hubs",
+    "rationale": "Drug discovery, pharmacometrics, clinical data and process research",
+    "hubs": "Boston/Cambridge; Rahway; West Point; South San Francisco search focus",
+    "programs": "Future Talent internships/co-ops; graduate programs",
+    "cycle": {
+      "opening": "Typically early September, with additions through fall/winter. Graduate roles also begin posting September.",
+      "closing": "Postings close once a candidate pool is identified. Do not wait for a common deadline.",
+      "evidence": "Published recurring cycle",
+      "duration": "Internships 10\u201312 weeks; co-ops 4\u20136 months",
+      "eligibility": "Current BS/MS/PhD students, normally returning to school",
+      "relocation": "Role-specific; do not infer from program page.",
+      "source_url": "https://jobs.merck.com/us/en/student-opportunities",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "QP2 R412399 returned unavailable on official detail page; excluded",
+    "next_action": "Recheck live portal; search-index presence is insufficient.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "pfizer",
+    "name": "Pfizer",
+    "priority": "U.S. hubs",
+    "rationale": "Discovery, clinical development and biostatistics",
+    "hubs": "Cambridge; Groton; New York/Pearl River; San Diego search focus",
+    "programs": "Pfizer Futures undergraduate summer program; other jobs separately",
+    "cycle": {
+      "opening": "2027 cohort opens October 5, 2026.",
+      "closing": "2027 cohort closes November 8, 2026. Applies to Futures, not every Pfizer vacancy.",
+      "evidence": "Published cohort dates",
+      "duration": "Paid summer program; duration not specified on reviewed page",
+      "eligibility": "Futures is undergraduate-only; GPA >=3.0, R&D >=3.3",
+      "relocation": "Not stated on program page.",
+      "source_url": "https://www.pfizer.com/en/about/careers/pfizer-futures",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Upcoming program, not an active vacancy in Jobs",
+    "next_action": "Check October 5; seek separate graduate-level scientific roles.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "bms",
+    "name": "Bristol Myers Squibb",
+    "priority": "U.S. hubs",
+    "rationale": "Oncology, cell therapy, biometrics and digital R&D",
+    "hubs": "Princeton/Lawrenceville; Boston; Seattle; Bay Area search focus",
+    "programs": "Summer internships; 6-month co-ops",
+    "cycle": {
+      "opening": "Summer applications August\u2013March. Spring co-op August\u2013November; fall co-op September\u2013April.",
+      "closing": "Mostly rolling applications; listed windows do not guarantee individual roles remain open.",
+      "evidence": "Published recurring cycle",
+      "duration": "Summer 10\u201312 weeks; co-ops 6 months",
+      "eligibility": "Degree and function vary",
+      "relocation": "Role-specific; not established in reviewed program page.",
+      "source_url": "https://careers.bms.com/internships-co-ops/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; no scientific requisition verified for this sample",
+    "next_action": "Filter students/grads, data science, clinical and R&D.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "lilly",
+    "name": "Eli Lilly",
+    "priority": "U.S. hubs",
+    "rationale": "Clinical R&D, data science, drug discovery and manufacturing",
+    "hubs": "Indianapolis; Boston; San Diego; Bay Area search focus",
+    "programs": "Summer internships; graduate/fellowship routes",
+    "cycle": {
+      "opening": "Campus hiring mainly fall, sometimes spring; applications not limited to visited schools.",
+      "closing": "No companywide closing date published on reviewed page.",
+      "evidence": "Published seasonal pattern",
+      "duration": "10\u201312 weeks, generally May\u2013September",
+      "eligibility": "BS/MS/MBA/PhD and other advanced students; individual criteria vary",
+      "relocation": "Not stated on reviewed page.",
+      "source_url": "https://careers.lilly.com/us/en/internships",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; no relevant role detail verified for sample",
+    "next_action": "Use discipline-specific campus recruiting and official jobs.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "novartis",
+    "name": "Novartis",
+    "priority": "U.S. hubs",
+    "rationale": "Discovery, clinical development, quantitative sciences and AI",
+    "hubs": "Cambridge; San Diego; East Hanover",
+    "programs": "Summer of Science; graduate analytics/BR fellowships",
+    "cycle": {
+      "opening": "Graduate BR/analytics fellowships recruit October\u2013February; AQS/clinical internships December\u2013February. Summer of Science opening not stated.",
+      "closing": "Summer of Science 2027 deadline December 7, 2026. Other programs have separate calendars.",
+      "evidence": "Published program/cohort dates",
+      "duration": "Most reviewed programs 10 weeks; PRISM postbac 2 years",
+      "eligibility": "Summer of Science excludes MS/PhD/PharmD/MD students. Graduate programs are separate.",
+      "relocation": "Summer of Science offers assessed housing/travel/transit support; not generalized to other programs.",
+      "source_url": "https://www.novartis.com/careers/early-careers/us-biomedical-research-internship-programs",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Programs researched; no requisition added",
+    "next_action": "Graduate students should prioritize AQS, clinical or graduate fellowships.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "astrazeneca",
+    "name": "AstraZeneca / Alexion",
+    "priority": "U.S. hubs",
+    "rationale": "Oncology, vaccines, clinical data and drug manufacturing",
+    "hubs": "Gaithersburg; Boston; Wilmington; Mount Vernon",
+    "programs": "U.S. summer internships; graduate roles",
+    "cycle": {
+      "opening": "Current Mount Vernon 2027 posting opened September 2, 2026. Fixed U.S.-wide opening not established.",
+      "closing": "Mount Vernon closes October 1, 2026. Program landing page says closed despite this current site-specific role.",
+      "evidence": "Current posting evidence; landing-page conflict",
+      "duration": "Sample 10 weeks; general U.S. program 10\u201312 weeks",
+      "eligibility": "Degree/visa rules vary; sample prioritizes local applicants",
+      "relocation": "Sample has limited temporary university housing for nonlocal interns.",
+      "source_url": "https://careers.astrazeneca.com/student-worker-and-internships-us",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified site internship included",
+    "next_action": "Use current requisitions to resolve stale program banners.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "sanofi",
+    "name": "Sanofi",
+    "priority": "U.S. hubs",
+    "rationale": "Vaccines, immunology, bioinformatics and AI-enabled R&D",
+    "hubs": "Waltham/Cambridge; Morristown; Swiftwater",
+    "programs": "Spring co-ops; summer internships",
+    "cycle": {
+      "opening": "2027 spring co-op and summer opportunities visible September 2026; recurring opening date not found.",
+      "closing": "No coordinated U.S. expiration window found.",
+      "evidence": "Current posting observation; annual dates unknown",
+      "duration": "Sampled spring co-op 6 months",
+      "eligibility": "Sample bioinformatics co-op accepts BS/MS and requires permanent work authorization",
+      "relocation": "Must relocate if needed; financial assistance not stated in sampled role.",
+      "source_url": "https://jobs.sanofi.com/en/usa-early-careers",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified co-op included",
+    "next_action": "Monitor scientific job descriptions even when portal category says HR.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "takeda",
+    "name": "Takeda",
+    "priority": "U.S. hubs",
+    "rationale": "Translational science, clinical development, data and CMC",
+    "hubs": "Boston/Cambridge; Lexington; U.S. manufacturing sites",
+    "programs": "U.S. Summer Internship Program",
+    "cycle": {
+      "opening": "Public fixed application opening not found on program page.",
+      "closing": "Public coordinated closing window not found.",
+      "evidence": "Program confirmed; application dates unknown",
+      "duration": "10\u201312 weeks",
+      "eligibility": "Project and degree criteria vary by posting",
+      "relocation": "Not established on reviewed program page.",
+      "source_url": "https://jobs.takeda.com/takeda-summer-internship-program",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; no requisition added",
+    "next_action": "Search internships, research, digital and technical development weekly.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "regeneron",
+    "name": "Regeneron",
+    "priority": "U.S. hubs",
+    "rationale": "Genetics, antibodies, biomarkers and clinical development",
+    "hubs": "Tarrytown; Sleepy Hollow; Rensselaer/Troy",
+    "programs": "Summer internships; co-ops; early-career programs",
+    "cycle": {
+      "opening": "Early-career page instructs applications August\u2013November.",
+      "closing": "Use role deadlines; no single summer cutoff established beyond advertised recruiting window.",
+      "evidence": "Published recruiting window",
+      "duration": "Internships 10+ weeks; co-ops 30 weeks (>6 months)",
+      "eligibility": "Enrolled associate/BS/MS/PhD students returning to study",
+      "relocation": "Not established in reviewed material.",
+      "source_url": "https://careers.regeneron.com/en/career-pathways/early-careers/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "PharmD associate R50231 returned 404; excluded",
+    "next_action": "Watch official current student requisitions; treat 404 as unavailable pending recheck.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "vertex",
+    "name": "Vertex",
+    "priority": "U.S. hubs",
+    "rationale": "Genetic disease, cell therapy, discovery and computational research",
+    "hubs": "Boston; San Diego; Providence search focus",
+    "programs": "Co-ops; internships; graduate jobs",
+    "cycle": {
+      "opening": "Historical 2026 spring co-op recruited Sep 2025; fall co-op posted March 2026. 2027 schedule not confirmed.",
+      "closing": "Historical spring interviews October\u2013December. No universal application cutoff published.",
+      "evidence": "Historical cohort evidence; do not project as confirmed",
+      "duration": "Historical co-ops January\u2013June or July\u2013December",
+      "eligibility": "Enrolled students; no sponsorship for these co-op/intern/entry programs",
+      "relocation": "Not established in reviewed page.",
+      "source_url": "https://www.vrtx.com/careers/career-growth-and-opportunities/co-ops/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Co-op program researched; no 2027 requisition verified",
+    "next_action": "Watch September and March as planning cues, then confirm each cohort.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "moderna",
+    "name": "Moderna",
+    "priority": "U.S. hubs",
+    "rationale": "mRNA, genomics, clinical AI and process development",
+    "hubs": "Cambridge; Norwood; Princeton",
+    "programs": "Summer internships; spring co-ops; CMC graduate rotation",
+    "cycle": {
+      "opening": "2027 CMC roles posted August 31; additional science/AI roles Sep 29\u201330, 2026.",
+      "closing": "No common cutoff in sampled postings; use live listing state.",
+      "evidence": "Current cohort posting evidence",
+      "duration": "Spring Jan 18\u2013Jun 25; Biometrics Jun 7\u2013Aug 20; CMC rotation 18 months",
+      "eligibility": "BS/MS/PhD depending on role; export-control and sponsorship terms vary",
+      "relocation": "Not stated in selected jobs.",
+      "source_url": "https://modernatx.wd1.myworkdayjobs.com/M_tx",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified roles included; CMC summer R19683 has conflicting years and was omitted",
+    "next_action": "Review new September batch; preserve job-specific eligibility wording.",
+    "collector": {
+      "adapter": "workday",
+      "base_url": "https://modernatx.wd1.myworkdayjobs.com",
+      "tenant": "modernatx",
+      "site": "M_tx",
+      "queries": [
+        "Intern",
+        "Co-op",
+        "Research Associate"
+      ],
+      "include_title_patterns": [
+        "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+      ]
+    }
+  },
+  {
+    "id": "gsk",
+    "name": "GSK",
+    "priority": "U.S. hubs",
+    "rationale": "Vaccines, immunology, clinical science and drug development",
+    "hubs": "Philadelphia area; Research Triangle Park; Cambridge search focus",
+    "programs": "Internships and co-ops via official Atrium partner",
+    "cycle": {
+      "opening": "Year-round recruiting; new roles added continually.",
+      "closing": "Role-specific; no synchronized expiration published.",
+      "evidence": "Published year-round recruiting",
+      "duration": "Summer 10\u201312 weeks; co-ops 6\u201312 months",
+      "eligibility": "Undergraduate/graduate and some recent-graduate routes; verify role",
+      "relocation": "Role-specific; not established.",
+      "source_url": "https://us.gsk.com/en-us/careers/early-careers/internships-and-co-ops/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; partner portal not harvested",
+    "next_action": "Follow the official GSK link to Atrium; track employer and payroll organization.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "google",
+    "name": "Google / DeepMind",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "AI and computational science; potential health/biology team matches",
+    "hubs": "Mountain View; San Francisco; other U.S. research hubs",
+    "programs": "Student Researcher and research internships",
+    "cycle": {
+      "opening": "Fall 2026 Student Researcher is active; starts typically August\u2013December. Program/team calendars vary.",
+      "closing": "Sample BS/MS application window anticipated through November 27, 2026, possibly earlier.",
+      "evidence": "Current program posting evidence",
+      "duration": "Variable term and time commitment",
+      "eligibility": "BS/MS student-researcher route; separate PhD routes",
+      "relocation": "Not stated in sampled role.",
+      "source_url": "https://research.google/programs-and-events/student-engagement/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Verified cross-team research intake included",
+    "next_action": "Confirm actual biology/health project before treating a match as bio-specific.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "illumina",
+    "name": "Illumina",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Genomics, sequencing, bioinformatics and assay technology",
+    "hubs": "San Diego; Bay Area search focus",
+    "programs": "Internships; new-graduate jobs",
+    "cycle": {
+      "opening": "U.S. recruiting opening not specified on reviewed internship page.",
+      "closing": "No common U.S. closing window found.",
+      "evidence": "Program confirmed; application dates unknown",
+      "duration": "Varies; do not apply a Singapore term to U.S. internships",
+      "eligibility": "Undergraduate, MS, MBA and PhD students",
+      "relocation": "Not established on reviewed page.",
+      "source_url": "https://www.illumina.com/company/careers/interns.html",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; indexed 2027 example was Singapore and excluded",
+    "next_action": "Search U.S. university portal for genomics, bioinformatics and software.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "thermo-fisher",
+    "name": "Thermo Fisher Scientific",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Life-science tools, cell biology, diagnostics and bioproduction",
+    "hubs": "Bay Area; Carlsbad; Boston area; Research Triangle Park search focus",
+    "programs": "Internships; early-talent jobs",
+    "cycle": {
+      "opening": "2027 intern page published; opening window not specified.",
+      "closing": "No common closing window found on reviewed page.",
+      "evidence": "Published program dates; application windows unknown",
+      "duration": "10 weeks; starts May 24 or June 14, 2027",
+      "eligibility": "Degree-level internships and graduate programs; role-specific",
+      "relocation": "Not established on reviewed page.",
+      "source_url": "https://jobs.thermofisher.com/global/en/interns",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "Program researched; no requisition verified for sample",
+    "next_action": "Search R&D, cell biology, bioinformatics and scientist I roles.",
+    "collector": {
+      "adapter": "manual"
+    }
+  },
+  {
+    "id": "jnj",
+    "name": "Johnson & Johnson",
+    "priority": "Bay Area + U.S. hubs",
+    "rationale": "Surgical robotics and medical-device development adjacent to pharmaceutical R&D",
+    "hubs": "Santa Clara; other U.S. sites",
+    "programs": "R&D internships; early-career jobs",
+    "cycle": {
+      "opening": "Observed R-099833 posted September 15, 2026; annual opening unknown.",
+      "closing": "Sample anticipated close October 17, 2026; may extend. Not a universal cutoff.",
+      "evidence": "Current posting evidence; annual dates unknown",
+      "duration": "Sample about 12 weeks in summer 2027",
+      "eligibility": "Sample requires junior/senior BS or graduate engineering; GPA >=3.0",
+      "relocation": "Not stated in sample.",
+      "source_url": "https://www.careers.jnj.com/en/jobs/r-099833/mechatronics-systems-integration-intern-rd/",
+      "researched_at": "2026-09-30"
+    },
+    "coverage_note": "One verified MedTech role in seed; no automated adapter",
+    "next_action": "Verify the sample and search official student/R&D listings.",
+    "collector": {
+      "adapter": "manual"
+    }
+  }
+]
