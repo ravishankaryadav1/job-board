@@ -1,9 +1,9 @@
 {
   "as_of": "2026-09-30",
   "summary": {
-    "student_visible": 35,
-    "automated_companies": 5,
-    "total_companies": 23
+    "student_visible": 33,
+    "automated_companies": 6,
+    "total_companies": 30
   },
   "companies": [
     {
@@ -33,11 +33,9 @@
         "source_url": "https://careers.gene.com/us/en/faq",
         "researched_at": "2026-09-30"
       },
-      "tracked": 5,
+      "tracked": 55,
       "student_visible": 5,
-      "issues": [
-        "Collector configured but no completed run yet"
-      ]
+      "issues": []
     },
     {
       "id": "gilead",
@@ -66,11 +64,9 @@
         "source_url": "https://www.gilead.com/careers/opportunities/early-career-opportunities/gilead-internship-program",
         "researched_at": "2026-09-30"
       },
-      "tracked": 13,
+      "tracked": 52,
       "student_visible": 13,
-      "issues": [
-        "Collector configured but no completed run yet"
-      ]
+      "issues": []
     },
     {
       "id": "nvidia",
@@ -99,11 +95,9 @@
         "source_url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
         "researched_at": "2026-09-30"
       },
-      "tracked": 2,
+      "tracked": 3,
       "student_visible": 2,
-      "issues": [
-        "Collector configured but no completed run yet"
-      ]
+      "issues": []
     },
     {
       "id": "amgen",
@@ -179,10 +173,10 @@
         "source_url": "https://www.biogen.com/careers/students-and-graduates.html",
         "researched_at": "2026-09-30"
       },
-      "tracked": 3,
-      "student_visible": 3,
+      "tracked": 13,
+      "student_visible": 1,
       "issues": [
-        "Collector configured but no completed run yet"
+        "Latest collection was partial; inspect collection_gaps"
       ]
     },
     {
@@ -479,11 +473,9 @@
         "source_url": "https://modernatx.wd1.myworkdayjobs.com/M_tx",
         "researched_at": "2026-09-30"
       },
-      "tracked": 5,
+      "tracked": 37,
       "student_visible": 5,
-      "issues": [
-        "Collector configured but no completed run yet"
-      ]
+      "issues": []
     },
     {
       "id": "gsk",
@@ -604,6 +596,184 @@
       "issues": [
         "Automated discovery and verification not implemented",
         "Recruiting windows have unknown or historical evidence"
+      ]
+    },
+    {
+      "id": "boehringer-ingelheim",
+      "name": "Boehringer Ingelheim",
+      "rationale": "Prescription medicines, biopharmaceuticals and animal health; no confirmed AI-specific initiative",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Public fixed application opening not found on reviewed pages.",
+        "closing": "Public coordinated closing window not found.",
+        "evidence": "Careers portal confirmed; program-level facts not found",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://jobs.boehringer-ingelheim.com/en-US",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
+      ]
+    },
+    {
+      "id": "revolution-medicines",
+      "name": "Revolution Medicines",
+      "rationale": "RAS-targeted small-molecule oncology (Tri-Complex platform, RAS(ON) biology)",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Not found in published sources.",
+        "closing": "Not found in published sources.",
+        "evidence": "LinkedIn confirms an active intern cohort; no official program page found",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://www.revmed.com/careers",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
+      ]
+    },
+    {
+      "id": "tempus-ai",
+      "name": "Tempus AI",
+      "rationale": "Precision medicine combining genomic sequencing with multimodal AI across oncology, cardiology and radiology",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Not found; careers domain was rate-limited during review.",
+        "closing": "Not found in published sources.",
+        "evidence": "Company/product facts confirmed via published references; recruiting facts not accessible",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://en.wikipedia.org/wiki/Tempus_AI",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
+      ]
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion Pharmaceuticals",
+      "rationale": "Recursion OS: AI-native drug discovery combining cell imaging, machine learning and generative chemistry",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Not found in published sources.",
+        "closing": "Not found in published sources.",
+        "evidence": "Internship program confirmed via Greenhouse job board",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://job-boards.greenhouse.io/recursionpharmaceuticals",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
+      ]
+    },
+    {
+      "id": "verily",
+      "name": "Verily",
+      "rationale": "AI-native precision health company (Pre platform) for clinical research and healthcare data harmonization",
+      "collector": {
+        "adapter": "workday",
+        "base_url": "https://verily.wd1.myworkdayjobs.com",
+        "tenant": "verily",
+        "site": "Verily_Careers",
+        "queries": [
+          "Intern",
+          "Data Scientist"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
+      },
+      "cycle": {
+        "opening": "Not found in published sources.",
+        "closing": "Not found in published sources.",
+        "evidence": "Workday collector confirmed; no program-level cycle facts published",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://www.verily.com/careers",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 3,
+      "student_visible": 0,
+      "issues": [
+        "Latest collection was partial; inspect collection_gaps",
+        "No fresh, approved, open postings in the student view"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "rationale": "Microsoft Research Health Futures and the Quine biology foundation model (with the Broad Institute)",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Not found in published sources.",
+        "closing": "Not found in published sources.",
+        "evidence": "Program names and duration confirmed via microsoft.com/research; application windows not published",
+        "duration": "Research internships about 12 weeks; Discovery program 4 weeks.",
+        "eligibility": "Varies by program; Discovery is first-year students, Global Internships span bachelor's through PhD.",
+        "relocation": "Not stated for interns specifically; visa support mentioned generally.",
+        "source_url": "https://www.microsoft.com/en-us/research/careers/",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
+      ]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "rationale": "AWS HealthOmics: managed bioinformatics/genomics service for drug discovery and clinical diagnostics",
+      "collector": {
+        "adapter": "manual"
+      },
+      "cycle": {
+        "opening": "Not found in published sources.",
+        "closing": "Not found in published sources.",
+        "evidence": "Program tracks confirmed via amazon.jobs; no HealthOmics-specific recruiting page found",
+        "duration": "Not stated in accessible sources.",
+        "eligibility": "Not stated in accessible sources.",
+        "relocation": "Not established in accessible sources.",
+        "source_url": "https://www.amazon.jobs/content/en/career-programs/university",
+        "researched_at": "2026-09-30"
+      },
+      "tracked": 0,
+      "student_visible": 0,
+      "issues": [
+        "Automated discovery and verification not implemented",
+        "No tracked postings; this is not evidence of no openings"
       ]
     }
   ]
