@@ -171,11 +171,29 @@ git push
 ```
 
 To host it on Vercel, `vercel.json` at the repo root pins `outputDirectory` to
-`public` with no build step, since the site is already static files. Link the repo
-once with `vercel link` (or connect the GitHub repo in the Vercel dashboard), then
-each `git push` to `main` redeploys the last committed `public/` snapshot. There is
-no scheduled refresh: republishing is a deliberate, manual step so no OpenAI key or
-source-fetching credentials ever need to live in a CI secret.
+`public` with no build step, since the site is already static files. There is no
+scheduled refresh: republishing is a deliberate, manual step so no OpenAI/Claude
+key or source-fetching credentials ever need to live in a CI secret.
+
+### Deploying to Vercel after a push
+
+`vercel link` connects a local checkout to the Vercel project once (`.vercel/` is
+git-ignored; re-run `vercel link` on a fresh clone). If the Vercel project isn't
+Git-connected (e.g. you only have collaborator access to the GitHub repo, not
+owner/admin access needed to install Vercel's GitHub App), `git push` alone does
+**not** redeploy — Vercel has no way to know the push happened. Treat every commit
++ push that touches `public/` as also requiring this sequence:
+
+```sh
+vercel deploy                                   # preview build
+vercel curl <preview-url>/board.json -- -s -o /tmp/preview_board.json
+python3 -c "import json; print(json.load(open('/tmp/preview_board.json'))['summary'])"
+vercel deploy --prod                            # promote once the preview checks out
+```
+
+Preview URLs are SSO-protected, so use `vercel curl` (not a plain `curl`/fetch) to
+inspect one. Don't skip the preview-then-promote split just to save a step; it's
+what catches a bad export before it reaches the production alias.
 
 ## Weekly operation and development
 
