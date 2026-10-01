@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "summary": {
-    "student_visible": 33,
-    "automated_companies": 6,
+    "student_visible": 31,
+    "automated_companies": 9,
     "total_companies": 30
   },
   "companies": [
@@ -104,7 +104,17 @@
       "name": "Amgen",
       "rationale": "Computational biology, scientific data, process development",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://amgen.wd1.myworkdayjobs.com",
+        "tenant": "amgen",
+        "site": "Careers",
+        "queries": [
+          "Intern",
+          "Research Associate"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "2027 sample posted Aug 31 and Sep 11, 2026; annual opening date not established.",
@@ -116,10 +126,11 @@
         "source_url": "https://careers.amgen.com/en/search-jobs/research%20intern/87/1",
         "researched_at": "2026-09-30"
       },
-      "tracked": 2,
-      "student_visible": 2,
+      "tracked": 36,
+      "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented"
+        "Latest collection was partial; inspect collection_gaps",
+        "No fresh, approved, open postings in the student view"
       ]
     },
     {
@@ -529,7 +540,17 @@
       "name": "Illumina",
       "rationale": "Genomics, sequencing, bioinformatics and assay technology",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://illumina.wd1.myworkdayjobs.com",
+        "tenant": "illumina",
+        "site": "illumina-careers",
+        "queries": [
+          "Intern",
+          "Bioinformatics"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "U.S. recruiting opening not specified on reviewed internship page.",
@@ -541,11 +562,10 @@
         "source_url": "https://www.illumina.com/company/careers/interns.html",
         "researched_at": "2026-09-30"
       },
-      "tracked": 0,
+      "tracked": 10,
       "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented",
-        "No tracked postings; this is not evidence of no openings",
+        "No fresh, approved, open postings in the student view",
         "Recruiting windows have unknown or historical evidence"
       ]
     },
@@ -554,7 +574,17 @@
       "name": "Thermo Fisher Scientific",
       "rationale": "Life-science tools, cell biology, diagnostics and bioproduction",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://thermofisher.wd5.myworkdayjobs.com",
+        "tenant": "thermofisher",
+        "site": "ThermoFisherCareers",
+        "queries": [
+          "Intern",
+          "Co-op"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "2027 intern page published; opening window not specified.",
@@ -566,11 +596,11 @@
         "source_url": "https://jobs.thermofisher.com/global/en/interns",
         "researched_at": "2026-09-30"
       },
-      "tracked": 0,
+      "tracked": 66,
       "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented",
-        "No tracked postings; this is not evidence of no openings",
+        "Latest collection was partial; inspect collection_gaps",
+        "No fresh, approved, open postings in the student view",
         "Recruiting windows have unknown or historical evidence"
       ]
     },

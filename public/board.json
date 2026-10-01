@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-30T23:46:01+00:00",
-  "as_of": "2026-09-30",
+  "generated_at": "2026-10-01T00:01:29+00:00",
+  "as_of": "2026-10-01",
   "summary": {
-    "student_visible": 33,
-    "automated_companies": 6,
+    "student_visible": 31,
+    "automated_companies": 9,
     "total_companies": 30
   },
   "jobs": [
@@ -43,80 +43,6 @@
       "student_visible": true,
       "source_notes": "Bay Area placement not guaranteed. Enterprise technology role; biomedical project not guaranteed.",
       "source_url": "https://careers.abbvie.com/en/job/2027-business-technology-solutions-intern-data-and-software-engineering-undergraduate-in-south-san-francisco-ca-jid-32207"
-    },
-    {
-      "key": "amgen:R-254519",
-      "company": "Amgen",
-      "company_id": "amgen",
-      "job_id": "R-254519",
-      "title": "Grad Intern – Operations – Process Development (Summer 2027)",
-      "url": "https://careers.amgen.com/en/job/thousand-oaks/grad-intern-operations-process-development-summer-2027/87/99867785184",
-      "location": "Thousand Oaks, CA",
-      "country": "United States of America",
-      "role_type": "Internship",
-      "track": "Development",
-      "term_bucket": "Unknown",
-      "department": "Operations / Process Development",
-      "degree": "Graduate student after first program year; MS molecular biology/chemical engineering preferred",
-      "eligibility": "Continued enrollment and U.S. work authorization; 2–4 years laboratory experience preferred.",
-      "duration_text": "Summer internship; exact length not stated",
-      "program_term": "Summer 2027",
-      "work_mode": "Onsite",
-      "hub": "Southern California",
-      "relocation": "Not stated",
-      "relocation_detail": "Not stated in job.",
-      "entry_level": "Yes",
-      "bio_relevance": "Direct",
-      "skills": "CMC; process development; manufacturing",
-      "date_to_note": null,
-      "date_kind": "rolling",
-      "time_left_to_apply": null,
-      "posted_at": "2026-08-31",
-      "status": "open",
-      "review_state": "approved",
-      "last_verified": "2026-09-30",
-      "first_seen": "2026-09-30",
-      "fresh": true,
-      "student_visible": true,
-      "source_notes": "Technical projects span drug substance, attributes, drug product and clinical supply. Date wording: Rolling until sufficient applicants / hire.",
-      "source_url": "https://careers.amgen.com/en/job/thousand-oaks/grad-intern-operations-process-development-summer-2027/87/99867785184"
-    },
-    {
-      "key": "amgen:R-255722",
-      "company": "Amgen",
-      "company_id": "amgen",
-      "job_id": "R-255722",
-      "title": "Grad Intern – Data Scientist – Technology, AI & Data (Summer 2027)",
-      "url": "https://careers.amgen.com/en/job/washington-d-c/grad-intern-data-scientist-technology-ai-and-data-summer-2027/87/100494061168",
-      "location": "United States – Remote",
-      "country": "United States of America",
-      "role_type": "Internship",
-      "track": "Enabling / platform",
-      "term_bucket": "Unknown",
-      "department": "Technology, AI & Data",
-      "degree": "Graduate student; first program year completed; MS quantitative/technology field preferred",
-      "eligibility": "Continued enrollment; U.S. location and work authorization; available for potential full-time employment by July 2028.",
-      "duration_text": "Summer internship; exact length not stated",
-      "program_term": "Summer 2027",
-      "work_mode": "Remote, U.S.",
-      "hub": "U.S. remote",
-      "relocation": "Not stated",
-      "relocation_detail": "Not stated; remote within U.S.",
-      "entry_level": "Yes",
-      "bio_relevance": "Adjacent / possible",
-      "skills": "data science; AI/ML; scientific data",
-      "date_to_note": null,
-      "date_kind": "rolling",
-      "time_left_to_apply": null,
-      "posted_at": "2026-09-11",
-      "status": "open",
-      "review_state": "approved",
-      "last_verified": "2026-09-30",
-      "first_seen": "2026-09-30",
-      "fresh": true,
-      "student_visible": true,
-      "source_notes": "Broad data-science placement; precise team and biomedical project not guaranteed. Date wording: Rolling until sufficient applicants / hire.",
-      "source_url": "https://careers.amgen.com/en/job/washington-d-c/grad-intern-data-scientist-technology-ai-and-data-summer-2027/87/100494061168"
     },
     {
       "key": "astrazeneca:R-259130",
@@ -1328,7 +1254,17 @@
       "name": "Amgen",
       "rationale": "Computational biology, scientific data, process development",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://amgen.wd1.myworkdayjobs.com",
+        "tenant": "amgen",
+        "site": "Careers",
+        "queries": [
+          "Intern",
+          "Research Associate"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "2027 sample posted Aug 31 and Sep 11, 2026; annual opening date not established.",
@@ -1340,10 +1276,11 @@
         "source_url": "https://careers.amgen.com/en/search-jobs/research%20intern/87/1",
         "researched_at": "2026-09-30"
       },
-      "tracked": 2,
-      "student_visible": 2,
+      "tracked": 36,
+      "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented"
+        "Latest collection was partial; inspect collection_gaps",
+        "No fresh, approved, open postings in the student view"
       ]
     },
     {
@@ -1753,7 +1690,17 @@
       "name": "Illumina",
       "rationale": "Genomics, sequencing, bioinformatics and assay technology",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://illumina.wd1.myworkdayjobs.com",
+        "tenant": "illumina",
+        "site": "illumina-careers",
+        "queries": [
+          "Intern",
+          "Bioinformatics"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "U.S. recruiting opening not specified on reviewed internship page.",
@@ -1765,11 +1712,10 @@
         "source_url": "https://www.illumina.com/company/careers/interns.html",
         "researched_at": "2026-09-30"
       },
-      "tracked": 0,
+      "tracked": 10,
       "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented",
-        "No tracked postings; this is not evidence of no openings",
+        "No fresh, approved, open postings in the student view",
         "Recruiting windows have unknown or historical evidence"
       ]
     },
@@ -1778,7 +1724,17 @@
       "name": "Thermo Fisher Scientific",
       "rationale": "Life-science tools, cell biology, diagnostics and bioproduction",
       "collector": {
-        "adapter": "manual"
+        "adapter": "workday",
+        "base_url": "https://thermofisher.wd5.myworkdayjobs.com",
+        "tenant": "thermofisher",
+        "site": "ThermoFisherCareers",
+        "queries": [
+          "Intern",
+          "Co-op"
+        ],
+        "include_title_patterns": [
+          "\\b(intern(ship)?|co[\\s-]?op|graduate|new[\\s-]?college[\\s-]?grad|research[\\s-]?associate|scientist|rotation)\\b"
+        ]
       },
       "cycle": {
         "opening": "2027 intern page published; opening window not specified.",
@@ -1790,11 +1746,11 @@
         "source_url": "https://jobs.thermofisher.com/global/en/interns",
         "researched_at": "2026-09-30"
       },
-      "tracked": 0,
+      "tracked": 66,
       "student_visible": 0,
       "issues": [
-        "Automated discovery and verification not implemented",
-        "No tracked postings; this is not evidence of no openings",
+        "Latest collection was partial; inspect collection_gaps",
+        "No fresh, approved, open postings in the student view",
         "Recruiting windows have unknown or historical evidence"
       ]
     },
